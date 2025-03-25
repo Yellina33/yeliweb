@@ -557,7 +557,7 @@ function App() {
                 href="#work"
                 className="inline-block mt-8 px-8 py-3 bg-gradient-primary text-white rounded-lg font-semibold hover:opacity-90 transition-opacity duration-300"
               >
-                View My Projects
+                Projects
               </a>
             </div>
           </div>
