@@ -7,6 +7,7 @@ interface Project {
   image: string;
   category: string;
   tags: string[];
+  link?: string;
 }
 
 // Custom SVG icons as React components
@@ -371,6 +372,7 @@ function App() {
       image: '/images/incubateur-projects.webp',
       category: 'ux',
       tags: ['UX Design', 'Wireframing', 'Style guide'],
+      link: 'https://www.figma.com/design/8HvB5fYqgPszK3EgKxNqOT/UX-UI-internships-projects?node-id=1149-8655&t=CbwjEruZBkhEFMrQ-1', // Add your project URL here
     },
     {
       title: 'Portfolio website',
@@ -379,14 +381,16 @@ function App() {
       image: '/images/wordpress-artist-sugai.webp',
       category: 'wordpress',
       tags: ['WordPress integration', 'Wireframe', 'Logo creation'],
+      link: 'https://sugaipainting.com/', // Add your project URL here
     },
     {
       title: 'Plumbing services website',
       description:
-        'Website for a plumbing service company based in Lille. This project includes the design of an intuitive user journey, the construction of pages and components, and optimization of content for enhanced visibility and SEO performance.',
+        'Creation and integration of website for a plumbing service company based in Lille. This project includes the design of an intuitive user journey, the construction of pages and components, and optimization of content for enhanced visibility and SEO performance.',
       image: '/images/plombier-services.webp',
       category: 'wordpress',
       tags: ['WordPress integration', 'Style guide', 'SEO', 'Logo design'],
+      link: 'https://plombier.servicesconfort.fr/', // Add your project URL here
     },
     {
       title: 'Business brand identity',
@@ -395,6 +399,7 @@ function App() {
       image: '/images/precieuse-nahla.webp',
       category: 'visual',
       tags: ['Label design', 'Logo Design', 'Style Guide'],
+      link: 'https://www.behance.net/gallery/227532891/Packaging-design', // Add your project URL here
     },
     {
       title: 'Outfit logo design',
@@ -402,13 +407,15 @@ function App() {
       image: '/images/epolar-logo.webp',
       category: 'visual',
       tags: ['Typography', 'Logo Design', 'Illustration'],
+      link: 'https://www.behance.net/gallery/228354413/Epolar-logo', // Add your project URL here
     },
     {
-      title: 'Pub logo design',
+      title: 'Signage logo design',
       description: 'Logo and illustration for pub restaurant',
       image: '/images/gorilla-brothers-logo.webp',
       category: 'visual',
       tags: ['Typography', 'Logo Design', 'Illustration'],
+      link: 'https://www.behance.net/gallery/227532525/Creative-Signage-Design', // Add your project URL here
     },
     {
       title: 'CD cover visual',
@@ -417,6 +424,7 @@ function App() {
       image: '/images/visual-music-cover.webp',
       category: 'visual',
       tags: ['Typography', 'Logo Design'],
+      link: 'https://www.behance.net/gallery/227544537/Cover-music-album', // Add your project URL here
     },
     {
       title: 'Album Mixing',
@@ -425,6 +433,7 @@ function App() {
       image: '/images/sugai-music.webp',
       category: 'music',
       tags: ['Music Production', 'Mixing', 'Recording'],
+      link: 'https://soundcloud.com/romain-becu/sets/un-nouveau-jour-sur-terre?si=235bd59702404d2dbc24d0bb5e55389f&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing', // Add your project URL here
     },
     {
       title: 'Education management application',
@@ -433,6 +442,7 @@ function App() {
       image: '/images/kinot-application.webp',
       category: 'ux',
       tags: ['Figma', 'Wireframing', 'Prototyping'],
+      link: 'https://www.figma.com/proto/qdFIp7HJ72GO69NIt7urZx/Education-management-application?node-id=3-4451&t=6ZkJlQ0j9tVuGUoF-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1', // Add your project URL here
     },
     {
       title: 'Candidates management system',
@@ -441,14 +451,16 @@ function App() {
       image: '/images/kali-application.webp',
       category: 'ux',
       tags: ['Style guide', 'UX/ UI', 'Prototyping'],
+      link: 'https://www.figma.com/proto/PXyPgh4pX0D4pp4uiYtwhH/Student-recruitment-management-system?node-id=3-5259&t=m7UpSLu4GNL5qzhG-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A5259', // Add your project URL here
     },
     {
       title: 'IT Learning school website',
       description:
-        'Participation in a complete branding and prototyping project of a platform dedicated to offering courses and training on digital careers.',
+        'Participation in a complete branding and prototyping project of a platform dedicated to offering courses and training on digital careers. Conception and editing of visuals and videos for the YouTube channel and social media. Writing articles dedicated to technology for website referencing and optimization strategies',
       image: '/images/novao-prototype.webp',
       category: 'ux',
       tags: ['UX / UI', 'Video editing', 'Prototyping', 'Design System'],
+      link: 'https://novao.fr/', // Add your project URL here
     },
     {
       title: 'E-Learning platform',
@@ -457,6 +469,7 @@ function App() {
       image: '/images/eleapp-application.webp',
       category: 'ux',
       tags: ['Figma', 'Prototyping', 'Design System'],
+      link: 'https://www.figma.com/proto/9HvKuMC45NkRGnoCvaylE8/Education-desktop-application?node-id=20-6697&t=7HKvKTUKPuPhxpfB-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1', // Add your project URL here
     },
   ];
 
@@ -557,7 +570,7 @@ function App() {
                 href="#work"
                 className="inline-block mt-8 px-8 py-3 bg-gradient-primary text-white rounded-lg font-semibold hover:opacity-90 transition-opacity duration-300"
               >
-                Projects
+                View My Projects
               </a>
             </div>
           </div>
@@ -614,6 +627,31 @@ function App() {
                       </span>
                     ))}
                   </div>
+                  {project.link && (
+                    <div className="mt-4 pt-4 border-t border-gray-100">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-sm font-semibold text-transparent bg-gradient-primary bg-clip-text hover:opacity-80 transition-opacity duration-300"
+                      >
+                        View Project
+                        <svg
+                          className="ml-1 w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
