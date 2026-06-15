@@ -18,6 +18,8 @@ const UxDesignIcon = () => (
     viewBox="0 0 73 74"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
   >
     <rect
       x="30.0786"
@@ -107,6 +109,8 @@ const WebDesignIcon = () => (
     viewBox="0 0 73 74"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
   >
     <rect
       x="30.0786"
@@ -196,6 +200,8 @@ const WordPressIcon = () => (
     viewBox="0 0 73 74"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
   >
     <rect
       x="30.0786"
@@ -283,6 +289,8 @@ const MusicProductionIcon = () => (
     viewBox="0 0 76 75"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
   >
     <rect
       x="31.0786"
@@ -515,9 +523,10 @@ function App() {
                 href="https://www.linkedin.com/in/yelibengochea/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit YeliWeb on LinkedIn (opens in a new tab)"
                 className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300"
               >
-                <Linkedin size={24} className="text-white" />
+                <Linkedin size={24} className="text-white" aria-hidden="true" />
               </a>
             </div>
 
@@ -525,7 +534,7 @@ function App() {
               <span className="mr-2 bg-gradient-to-r from-[#FFE092] to-secondary bg-clip-text text-transparent font-semibold">
                 View My Work
               </span>
-              <ChevronDown className="text-secondary animate-bounce" />
+              <ChevronDown className="text-secondary animate-bounce" aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -539,7 +548,7 @@ function App() {
               <div className="w-full h-[500px] rounded-2xl overflow-hidden items-center justify-center">
                 <img
                   src="/images/image-hero.jpg"
-                  alt="Profile"
+                  alt="Portrait of the YeliWeb designer and developer"
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -582,11 +591,17 @@ function App() {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12 text-center">My Work</h2>
 
-          <div className="flex justify-center gap-4 mb-12">
+          <div
+            className="flex justify-center gap-4 mb-12"
+            role="group"
+            aria-label="Filter projects by category"
+          >
             {['all', 'ux', 'wordpress', 'visual', 'music'].map((category) => (
               <button
                 key={category}
+                type="button"
                 onClick={() => setActiveSection(category)}
+                aria-pressed={activeSection === category}
                 className={`px-6 py-2 rounded-full ${
                   activeSection === category
                     ? 'bg-gradient-primary text-white'
@@ -641,6 +656,7 @@ function App() {
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
+                          aria-hidden="true"
                         >
                           <path
                             strokeLinecap="round"
