@@ -716,10 +716,10 @@ function App() {
               <div className="w-auto h-auto full flex items-center justify-center mx-auto mb-4">
                 <MusicProductionIcon />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Music Production</h3>
+              <h3 className="text-xl font-semibold mb-2">Audiovisual Production</h3>
               <p className="text-gray-600">
-                Audio production and mixing of music, voice-over recording for
-                audiovisual projects
+                Audio recording, arrangement and mixing. Video editin and post-production.
+                Voice-over recording for audiovisual projects.
               </p>
             </div>
           </div>
